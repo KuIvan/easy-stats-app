@@ -7,50 +7,38 @@ end
 
 ruby '3.0.2'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1.4'
+# Rails stack
+begin
+  gem 'rails', '~> 6.1.4'
+  gem 'pg'
+  gem 'puma'
+  gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+end
 
-# Use postgresql as the database for Active Record
-gem 'pg', '~> 1.1'
-# Use Puma as the app server
-gem 'puma', '~> 5.0'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+# Custom gems
+begin
+  gem 'rack-cors'                          # https://github.com/cyu/rack-cors
+  gem 'aasm'                               # https://github.com/aasm/aasm
+  gem 'interactor'                         # https://github.com/collectiveidea/interactor
+  gem 'devise'                             # https://github.com/heartcombo/devise
+  gem 'devise-jwt'                         # https://github.com/waiting-for-dev/devise-jwt
+  gem 'email_validator'                    # https://github.com/K-and-R/email_validator
+  gem 'digest'                             # https://github.com/ruby/digest
+  gem 'graphql'                            # https://github.com/rmosolgo/graphql-ruby
+  gem 'graphiql-rails'                     # https://github.com/rmosolgo/graphiql-rails
+end
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-gem 'rack-cors'
-# Library for adding finite state machines to Ruby classes
-gem 'aasm'
-# Used to encapsulate application's business logic
-gem 'interactor'
-# Flexible authentication solution for Rails based on Warden
-gem 'devise'
-# Extension which uses JWT tokens for user authentication
-gem 'devise-jwt'
-gem 'email_validator'
-gem 'digest'
 group :development, :test do
-  gem 'dotenv-rails'
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'dotenv-rails'                                    # https://github.com/bkeepers/dotenv
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]   # https://github.com/deivid-rodriguez/byebug
 end
 
 group :development do
-  gem 'rubocop-rails', require: false # Extension focused on enforcing Rails best practices and coding conventions
-  gem 'annotate' # Used to add a comment summarizing the current schema
-  gem 'bullet' # Used to increase application performance by reducing the number of queries it makes.
-  gem 'amazing_print' # Used to prints Ruby objects in full color exposing their internal structure with proper indentation
-  gem 'rack-mini-profiler' # Middleware that displays speed badge for every html page
-  gem 'listen', '~> 3.3'
-  gem 'spring' # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'rubocop-rails', require: false         # https://github.com/rubocop/rubocop-rails
+  gem 'annotate'                              # https://github.com/ctran/annotate_models
+  gem 'bullet'                                # https://github.com/flyerhzm/bullet
+  gem 'amazing_print'                         # https://github.com/amazing-print/amazing_print
+  gem 'rack-mini-profiler'                    # https://github.com/MiniProfiler/rack-mini-profiler
+  gem 'listen', '~> 3.3'                      # https://github.com/guard/listen
+  gem 'spring'                                # https://github.com/rails/spring
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

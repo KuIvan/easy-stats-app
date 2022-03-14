@@ -6,7 +6,10 @@
 
 # Ignore bundler config.
 /.bundle
+
+# NOTE:: Need remove it later
 /coverage
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -26,9 +29,17 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+# IDEA
 .idea
+
+# NOTE:: Need remove it later
 .keep
+
+#ENV
 .env
+
+# Ignore RVM project
 .rvmrc
 
+# NOTE:: Need remove it later
 .byebug_history
