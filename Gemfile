@@ -26,6 +26,8 @@ gem 'puma', '~> 5.0'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
+# Library for adding finite state machines to Ruby classes
+gem 'aasm'
 # Used to encapsulate application's business logic
 gem 'interactor'
 # Flexible authentication solution for Rails based on Warden

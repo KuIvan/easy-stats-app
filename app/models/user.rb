@@ -1,7 +1,5 @@
 class User < ApplicationRecord
   include Devise::JWT::RevocationStrategies::JTIMatcher
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable,
          :registerable,
          :jwt_authenticatable,
@@ -9,9 +7,12 @@ class User < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true, email: true
+  validates :first_name, :last_name, presence: true
   validates :password,
             presence: true,
             length: { in: Devise.password_length }
+
+  has_many :teams_players, dependent: :destroy
 end
 
 # == Schema Information
@@ -19,9 +20,12 @@ end
 # Table name: users
 #
 #  id                     :bigint           not null, primary key
+#  birthday               :date
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
+#  first_name             :string           default(""), not null
 #  jti                    :string           not null
+#  last_name              :string           default(""), not null
 #  name                   :string           not null
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string

@@ -11,9 +11,12 @@ end
 # Table name: users
 #
 #  id                     :bigint           not null, primary key
+#  birthday               :date
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
+#  first_name             :string           default(""), not null
 #  jti                    :string           not null
+#  last_name              :string           default(""), not null
 #  name                   :string           not null
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
