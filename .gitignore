@@ -31,7 +31,7 @@
 
 # IDEA
 .idea
-
+.DS_Store
 # NOTE:: Need remove it later
 .keep
 
