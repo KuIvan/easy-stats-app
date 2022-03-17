@@ -10,7 +10,8 @@ class User < ApplicationRecord
   validates :first_name, :last_name, presence: true
   validates :password,
             presence: true,
-            length: { in: Devise.password_length }
+            length: { in: Devise.password_length },
+            on: :create
 
   has_many :teams_players, dependent: :destroy
 end

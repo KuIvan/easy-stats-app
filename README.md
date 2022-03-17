@@ -27,3 +27,44 @@ Start:
    
 * ruby to 3.0.3
 * rails to 7.0.2.3
+
+3) Example query
+
+```
+query FetchUsers {
+  fetchUsers {
+    nodes {
+      id
+      fullName
+    }
+  }
+}
+```
+
+4) Example mutation
+
+```
+mutation UpdateUser (
+  $id: ID!,
+  $firstName: String
+) {
+    updateUser (
+      input: {
+        params: {
+          id: $id,
+          firstName: $firstName
+        }
+      }
+    ) 
+  {
+    user {
+      id
+      fullName
+    }
+  }
+}
+
+// Query Variables
+{"id": 1, "firstName": "John"}
+
+```
