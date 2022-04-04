@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Users::SessionsController < Devise::SessionsController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:new]
   skip_before_action :verify_signed_out_user, only: :destroy
 
   def new
@@ -9,9 +9,10 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def create
-    #TODO make sign in with name
-    if current_user.present?
-      render json: current_user.to_json(only: [:id, :name, :email])
+    user = User.find_by_email(params[:user][:email])
+    if user.present? && user.valid_password?(params[:user][:password])
+      sign_in :user, user
+      render json: user.to_json(only: [:id, :name, :email])
     else
       error = I18n.t "user", scope: "errors.not_found", default: :default
       render json: { errors: { "user": [error] } }, status: :not_found
