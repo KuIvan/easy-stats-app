@@ -36,22 +36,21 @@ ActiveRecord::Schema.define(version: 2022_03_14_134634) do
 
   create_table "games", force: :cascade do |t|
     t.bigint "stage_id"
-    t.bigint "host_id"
-    t.bigint "guest_id"
-    t.integer "host_goals", default: 0, null: false
-    t.integer "guest_goals", default: 0, null: false
     t.integer "status", default: 0
+    t.datetime "game_day"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["guest_id"], name: "index_games_on_guest_id"
-    t.index ["host_id"], name: "index_games_on_host_id"
     t.index ["stage_id"], name: "index_games_on_stage_id"
   end
 
   create_table "games_squads", force: :cascade do |t|
     t.bigint "seasons_squad_id"
+    t.bigint "game_id"
+    t.integer "goals"
+    t.integer "status", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_games_squads_on_game_id"
     t.index ["seasons_squad_id"], name: "index_games_squads_on_seasons_squad_id"
   end
 
@@ -161,9 +160,8 @@ ActiveRecord::Schema.define(version: 2022_03_14_134634) do
 
   add_foreign_key "actions", "games_squads_players", column: "addressable_id"
   add_foreign_key "actions", "games_squads_players", column: "initiator_id"
-  add_foreign_key "games", "games_squads", column: "guest_id"
-  add_foreign_key "games", "games_squads", column: "host_id"
   add_foreign_key "games", "stages"
+  add_foreign_key "games_squads", "games"
   add_foreign_key "games_squads", "seasons_squads"
   add_foreign_key "games_squads_players", "games_squads"
   add_foreign_key "games_squads_players", "seasons_squads_players"

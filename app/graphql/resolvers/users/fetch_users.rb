@@ -2,10 +2,13 @@ module Resolvers
   module Users
     class FetchUsers < Resolvers::BaseQuery
 
-      type Types::Common::UserType.connection_type, null: false
+      argument :name, String, required: false, default_value: nil
 
-      def resolve
-        User.all
+      type [Types::Common::UserType], null: false
+      # type Types::Common::UserType.connection_type, null: false
+
+      def resolve(name:)
+        User.where(name: name)
       end
 
     end

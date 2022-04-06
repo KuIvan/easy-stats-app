@@ -19,6 +19,7 @@ end
 begin
   gem 'rack-cors'                          # https://github.com/cyu/rack-cors
   gem 'aasm'                               # https://github.com/aasm/aasm
+  gem 'kaminari'                           # https://github.com/kaminari/kaminari
   gem 'interactor'                         # https://github.com/collectiveidea/interactor
   gem 'devise'                             # https://github.com/heartcombo/devise
   gem 'devise-jwt'                         # https://github.com/waiting-for-dev/devise-jwt

@@ -14,6 +14,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
       :name,
       :email,
       :password,
-      )
+    )
   end
 end
