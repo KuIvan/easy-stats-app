@@ -27,6 +27,7 @@ begin
   gem 'digest'                             # https://github.com/ruby/digest
   gem 'graphql'                            # https://github.com/rmosolgo/graphql-ruby
   gem 'graphiql-rails'                     # https://github.com/rmosolgo/graphiql-rails
+  gem "image_processing", ">= 1.2"         # https://github.com/janko/image_processing
 end
 
 group :development, :test do

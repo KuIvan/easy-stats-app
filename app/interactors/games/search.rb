@@ -13,6 +13,7 @@ module Games
       context.games = Game.joins(games_squads: { games_squads_player: { seasons_squads_player: { teams_player: :user } } })
                           .where(games_squads: { games_squads_players: { seasons_squads_players: { teams_players: { user: context.user } } } })
                           .order(game_day: :desc)
+                          .includes(games_squads: { seasons_squad: { team: :team_photo_attachment } }, stage: { season: { league: :tournament } })
     end
 
   end

@@ -1,5 +1,7 @@
 class GraphqlController < ApplicationController
 
+  include ActiveStorage::SetCurrent
+
   def execute
     variables = prepare_variables(params[:variables])
     query = params[:query]

@@ -7,6 +7,16 @@ module Types
       field :id, ID, null: false
       field :status, String, null: false
       field :game_day, GraphQL::Types::ISO8601DateTime, null: true
+      field :stage, Types::Common::StageType, null: false
+      field :games_squads, [Types::Common::GamesSquadType], null: false
+
+      def stage
+        object.stage
+      end
+
+      def games_squads
+        object.games_squads
+      end
 
     end
   end

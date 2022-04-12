@@ -25,24 +25,28 @@ puts 'Successfully create federation and system of leagues with 2 seasons'
 ############################# Creating Teams ############################
 #########################################################################
 react = Team.create!(name: 'React')
+react.team_photo.attach(io: File.open('1.jpeg'), filename: '1.jpeg')
 react_season_old_1 = react.seasons_squads.create!(season: season_old_league_1)
 react_season_cup_1 = react.seasons_squads.create!(season: season_cup_1)
 react_season_second_league_1 = react.seasons_squads.create!(season: season_second_league_1)
 react_season_second_league_2 = react.seasons_squads.create!(season: season_second_league_2)
 
 lazo = Team.create!(name: 'Lazo')
+lazo.team_photo.attach(io: File.open('1.jpeg'), filename: '2.png')
 lazo_season_old_1 = lazo.seasons_squads.create!(season: season_old_league_1)
 lazo_season_cup_1 = lazo.seasons_squads.create!(season: season_cup_1)
 lazo_season_second_league_1 = lazo.seasons_squads.create!(season: season_second_league_1)
 lazo_season_second_league_2 = lazo.seasons_squads.create!(season: season_second_league_2)
 
 youngs = Team.create!(name: 'Youngs')
+youngs.team_photo.attach(io: File.open('1.jpeg'), filename: '2.png')
 youngs_season_old_1 = youngs.seasons_squads.create!(season: season_old_league_1)
 youngs_season_cup_1 = youngs.seasons_squads.create!(season: season_cup_1)
 youngs_season_second_league_1 = youngs.seasons_squads.create!(season: season_second_league_1)
 youngs_season_second_league_2 = youngs.seasons_squads.create!(season: season_second_league_2)
 
 legion = Team.create!(name: 'Legion')
+legion.team_photo.attach(io: File.open('1.jpeg'), filename: '1.jpeg')
 legion_season_cup_1 = legion.seasons_squads.create!(season: season_cup_1)
 legion_season_second_league_1 = legion.seasons_squads.create!(season: season_second_league_1)
 legion_season_second_league_2 = legion.seasons_squads.create!(season: season_second_league_2)
@@ -183,18 +187,18 @@ game_5 = stage_3.games.create!(status: 'scheduled', game_day: DateTime.now + 10.
 game_6 = stage_3.games.create!(status: 'scheduled', game_day: DateTime.now + 12.days)
 
 react_game_1 = react_season_second_league_1.games_squads.create!(goals: 1, game: game_1)
-react_game_2 = react_season_second_league_1.games_squads.create!(goals: 10, game: game_3)
-react_game_3 = react_season_second_league_1.games_squads.create!(game: game_5)
+react_game_2 = react_season_second_league_1.games_squads.create!(goals: 10, game: game_3, status: 'guest')
+react_game_3 = react_season_second_league_1.games_squads.create!(game: game_5, status: 'guest')
 
-lazo_game_1 = lazo_season_second_league_1.games_squads.create!(goals: 11, game: game_1)
-lazo_game_2 = lazo_season_second_league_1.games_squads.create!(goals: 4, game: game_4)
+lazo_game_1 = lazo_season_second_league_1.games_squads.create!(goals: 11, game: game_1, status: 'guest')
+lazo_game_2 = lazo_season_second_league_1.games_squads.create!(goals: 4, game: game_4, status: 'guest')
 lazo_game_3 = lazo_season_second_league_1.games_squads.create!(game: game_6)
 
 youngs_game_1 = youngs_season_second_league_1.games_squads.create!(goals: 4, game: game_2)
 youngs_game_2 = youngs_season_second_league_1.games_squads.create!(goals: 2, game: game_3)
-youngs_game_3 = youngs_season_second_league_1.games_squads.create!(game: game_6)
+youngs_game_3 = youngs_season_second_league_1.games_squads.create!(game: game_6, status: 'guest')
 
-legion_game_1 = legion_season_second_league_1.games_squads.create!(goals: 4, game: game_2)
+legion_game_1 = legion_season_second_league_1.games_squads.create!(goals: 4, game: game_2, status: 'guest',)
 legion_game_2 = legion_season_second_league_1.games_squads.create!(goals: 5, game: game_4)
 legion_game_3 = legion_season_second_league_1.games_squads.create!(game: game_5)
 

@@ -2,6 +2,8 @@ class Team < ApplicationRecord
   has_many :teams_players, dependent: :destroy
   has_many :seasons_squads, dependent: :destroy
 
+  has_one_attached :team_photo
+
   validates :name, presence: true
 end
 
