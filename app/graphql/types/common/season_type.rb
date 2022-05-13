@@ -9,9 +9,9 @@ module Types
       field :finished_at, GraphQL::Types::ISO8601DateTime, null: true
       field :league, Types::Common::LeagueType, null: false
 
-      def league
-        object.league
-      end
+      # def league
+      #   object.league
+      # end
 
     end
   end

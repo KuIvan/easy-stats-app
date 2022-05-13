@@ -1,10 +1,11 @@
 class Stage < ApplicationRecord
+  # Tour or Step tournament (Tour 1/Tour 2)
   belongs_to :season
   has_many :games, dependent: :destroy
 
   enum scope: {
     regular:  0,
-    play_off: 1,
+    play_off: 1
   }
 
   validates :name, presence: true

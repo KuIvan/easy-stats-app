@@ -17,7 +17,7 @@ class Action < ApplicationRecord
     position_error: 12,
     created_moment: 13,
     yellow_card: 14,
-    red_card: 15,
+    red_card: 15
   }
 
   validates :minute, numericality: { only_integer: true, greater_than_or_equal_to: 1 }

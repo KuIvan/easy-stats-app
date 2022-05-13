@@ -5,7 +5,6 @@ module Types
     end
 
     class FederationConnection < GraphQL::Types::Relay::BaseConnection
-
       edge_type(FederationEdgeType)
     end
   end

@@ -9,9 +9,9 @@ module Types
       field :goals, Int, null: false
       field :seasons_squad, Types::Common::SeasonsSquadType, null: false
 
-      def seasons_squad
-        object.seasons_squad
-      end
+      # def seasons_squad
+      #   object.seasons_squad
+      # end
 
     end
   end

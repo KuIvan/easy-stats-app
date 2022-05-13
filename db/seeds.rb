@@ -198,7 +198,7 @@ youngs_game_1 = youngs_season_second_league_1.games_squads.create!(goals: 4, gam
 youngs_game_2 = youngs_season_second_league_1.games_squads.create!(goals: 2, game: game_3)
 youngs_game_3 = youngs_season_second_league_1.games_squads.create!(game: game_6, status: 'guest')
 
-legion_game_1 = legion_season_second_league_1.games_squads.create!(goals: 4, game: game_2, status: 'guest',)
+legion_game_1 = legion_season_second_league_1.games_squads.create!(goals: 4, game: game_2, status: 'guest')
 legion_game_2 = legion_season_second_league_1.games_squads.create!(goals: 5, game: game_4)
 legion_game_3 = legion_season_second_league_1.games_squads.create!(game: game_5)
 

@@ -7,9 +7,9 @@ module Types
       field :id, ID, null: false
       field :season, Types::Common::SeasonType, null: false
 
-      def season
-        object.season
-      end
+      # def season
+      #   object.season
+      # end
 
     end
   end
