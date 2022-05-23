@@ -10,14 +10,6 @@ module Types
       field :stage, Types::Common::StageType, null: false
       field :games_squads, [Types::Common::GamesSquadType], null: false
 
-      # def stage
-      #   object.stage
-      # end
-      #
-      # def games_squads
-      #   object.games_squads
-      # end
-
     end
   end
 end

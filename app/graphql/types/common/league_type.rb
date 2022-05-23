@@ -8,10 +8,6 @@ module Types
       field :name, String, null: false
       field :tournament, Types::Common::TournamentType, null: false
 
-      # def tournament
-      #   object.tournament
-      # end
-
     end
   end
 end
