@@ -12,6 +12,7 @@ module Types
 
     # Games
     field :fetch_games, resolver: Resolvers::Games::FetchGames
+    field :get_game, resolver: Resolvers::Games::GetGame
 
   end
 end

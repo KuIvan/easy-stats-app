@@ -8,7 +8,7 @@ module Types
       field :status, String, null: false
       field :goals, Int, null: false
       field :seasons_squad, Types::Common::SeasonsSquadType, null: false
-
+      field :games_squads_player, [Types::Common::GameSquadPlayerType], null: false
     end
   end
 end
