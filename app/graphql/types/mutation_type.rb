@@ -4,6 +4,9 @@ module Types
 
     # Users
     field :update_user, mutation: Mutations::Users::UpdateUser
+    # Actions
+    field :add_action, mutation: Mutations::Actions::AddAction
+    field :remove_action, mutation: Mutations::Actions::RemoveAction
 
   end
 end
