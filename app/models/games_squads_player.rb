@@ -1,6 +1,8 @@
 class GamesSquadsPlayer < ApplicationRecord
   belongs_to :games_squad
   belongs_to :seasons_squads_player
+  has_one :game, through: :games_squad
+  has_one :teams_player, through: :seasons_squads_player
   validates :play_time, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
 end

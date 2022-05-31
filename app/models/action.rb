@@ -1,6 +1,7 @@
 class Action < ApplicationRecord
   belongs_to :initiator, class_name: "GamesSquadsPlayer"
   belongs_to :addressable, optional: true, class_name: "GamesSquadsPlayer"
+  belongs_to :game, class_name: "Games"
   enum scope: {
     goal: 0,
     assist: 1,
@@ -35,15 +36,18 @@ end
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #  addressable_id :bigint
+#  game_id        :bigint
 #  initiator_id   :bigint
 #
 # Indexes
 #
 #  index_actions_on_addressable_id  (addressable_id)
+#  index_actions_on_game_id         (game_id)
 #  index_actions_on_initiator_id    (initiator_id)
 #
 # Foreign Keys
 #
 #  fk_rails_...  (addressable_id => games_squads_players.id)
+#  fk_rails_...  (game_id => games.id)
 #  fk_rails_...  (initiator_id => games_squads_players.id)
 #

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_11_145108) do
+ActiveRecord::Schema.define(version: 2022_05_31_112936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,9 @@ ActiveRecord::Schema.define(version: 2022_04_11_145108) do
     t.boolean "is_successful", default: true, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "game_id"
     t.index ["addressable_id"], name: "index_actions_on_addressable_id"
+    t.index ["game_id"], name: "index_actions_on_game_id"
     t.index ["initiator_id"], name: "index_actions_on_initiator_id"
   end
 
@@ -186,6 +188,7 @@ ActiveRecord::Schema.define(version: 2022_04_11_145108) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "actions", "games"
   add_foreign_key "actions", "games_squads_players", column: "addressable_id"
   add_foreign_key "actions", "games_squads_players", column: "initiator_id"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

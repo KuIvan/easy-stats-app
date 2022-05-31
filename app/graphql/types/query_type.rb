@@ -10,6 +10,9 @@ module Types
     # Federations
     field :fetch_federations, resolver: Resolvers::Federations::FetchFederations
 
+    # Actions
+    # field :fetch_action_scopes, resolver: Resolvers::Actions::FetchActionScopes
+
     # Games
     field :fetch_games, resolver: Resolvers::Games::FetchGames
     field :get_game, resolver: Resolvers::Games::GetGame

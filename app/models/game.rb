@@ -5,6 +5,7 @@ class Game < ApplicationRecord
   # belongs_to :host, optional: true, class_name: "GamesSquad"
   # belongs_to :guest, optional: true, class_name: "GamesSquad"
   has_many :games_squads, dependent: :destroy
+  has_many :actions, dependent: :destroy
 
   enum status: { scheduled: 0, canceled: 1, finished: 2 }
 
