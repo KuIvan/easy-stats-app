@@ -3,7 +3,7 @@ module Types
     module Action
       class AddType < Types::BaseInputObject
         argument :initiator_id, ID, required: true
-        argument :addressable_id, ID, required: true
+        argument :addressable_id, ID, required: false
         argument :game_id, ID, required: true
         argument :scope, Types::Enums::Action::ActionScope, required: true
         argument :minute, Int, required: false

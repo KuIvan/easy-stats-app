@@ -6,7 +6,7 @@ module Types
 
       field :id, ID, null: false
       field :initiator, Types::Common::GameSquadPlayerType, null: false
-      field :addressable, Types::Common::GameSquadPlayerType, null: false
+      field :addressable, Types::Common::GameSquadPlayerType, null: true
       field :scope, Types::Enums::Action::ActionScope, null: false
       field :game, Types::Common::GameType, null: false
       field :is_successful, Boolean, null: false

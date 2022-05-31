@@ -1,7 +1,7 @@
 class Action < ApplicationRecord
   belongs_to :initiator, class_name: "GamesSquadsPlayer"
   belongs_to :addressable, optional: true, class_name: "GamesSquadsPlayer"
-  belongs_to :game, class_name: "Games"
+  belongs_to :game
   enum scope: {
     goal: 0,
     assist: 1,
