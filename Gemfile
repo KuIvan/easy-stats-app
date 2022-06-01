@@ -43,4 +43,5 @@ group :development do
   gem 'rack-mini-profiler'                    # https://github.com/MiniProfiler/rack-mini-profiler
   gem 'listen', '~> 3.3'                      # https://github.com/guard/listen
   gem 'spring'                                # https://github.com/rails/spring
+  gem 'faker'                                 # https://github.com/faker-ruby/faker.git
 end
