@@ -9,6 +9,8 @@ module Types
       field :goals, Int, null: false
       field :seasons_squad, Types::Common::SeasonsSquadType, null: false
       field :games_squads_player, [Types::Common::GameSquadPlayerType], null: false
+      field :game, Types::Common::GameType, null: false
+
     end
   end
 end

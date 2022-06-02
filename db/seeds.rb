@@ -253,7 +253,7 @@ react = Team.create!(name: "React")
 react_season_second_league_1 = react.seasons_squads.create!(season: season_second_league_1)
 
 legion = Team.create!(name: "Legion")
-legion_season_second_league_1 = react.seasons_squads.create!(season: season_second_league_1)
+legion_season_second_league_1 = legion.seasons_squads.create!(season: season_second_league_1)
 
 youngs = Team.create!(name: 'Youngs')
 youngs_season_second_league_1 = youngs.seasons_squads.create!(season: season_second_league_1)
@@ -316,11 +316,11 @@ ssp_3 = react_season_second_league_1.seasons_squads_players.create!(teams_player
 ssp_4 = react_season_second_league_1.seasons_squads_players.create!(teams_player: tp_react_user_4)
 ssp_5 = react_season_second_league_1.seasons_squads_players.create!(teams_player: tp_react_user_5)
 
-ssp_11 = react_season_second_league_1.seasons_squads_players.create!(teams_player: team_player_legion_user_1)
-ssp_22 = react_season_second_league_1.seasons_squads_players.create!(teams_player: team_player_legion_user_2)
-ssp_33 = react_season_second_league_1.seasons_squads_players.create!(teams_player: team_player_legion_user_3)
-ssp_44 = react_season_second_league_1.seasons_squads_players.create!(teams_player: team_player_legion_user_4)
-ssp_55 = react_season_second_league_1.seasons_squads_players.create!(teams_player: team_player_legion_user_5)
+ssp_11 = legion_season_second_league_1.seasons_squads_players.create!(teams_player: team_player_legion_user_1)
+ssp_22 = legion_season_second_league_1.seasons_squads_players.create!(teams_player: team_player_legion_user_2)
+ssp_33 = legion_season_second_league_1.seasons_squads_players.create!(teams_player: team_player_legion_user_3)
+ssp_44 = legion_season_second_league_1.seasons_squads_players.create!(teams_player: team_player_legion_user_4)
+ssp_55 = legion_season_second_league_1.seasons_squads_players.create!(teams_player: team_player_legion_user_5)
 
 ssp_111 = youngs_season_second_league_1.seasons_squads_players.create!(teams_player: team_player_youngs_user_1)
 ssp_222 = youngs_season_second_league_1.seasons_squads_players.create!(teams_player: team_player_youngs_user_2)

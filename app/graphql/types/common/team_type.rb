@@ -9,6 +9,7 @@ module Types
       field :id, ID, null: false
       field :name, String, null: false
       field :team_photo, String, null: true
+      field :seasons_squads, Types::Common::SeasonsSquadType, null: false
 
       def team_photo
         object.team_photo.url
