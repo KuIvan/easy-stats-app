@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_31_112936) do
+ActiveRecord::Schema.define(version: 2022_06_02_114235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,8 +90,10 @@ ActiveRecord::Schema.define(version: 2022_05_31_112936) do
     t.integer "play_time", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
     t.index ["games_squad_id"], name: "index_games_squads_players_on_games_squad_id"
     t.index ["seasons_squads_player_id"], name: "index_games_squads_players_on_seasons_squads_player_id"
+    t.index ["user_id"], name: "index_games_squads_players_on_user_id"
   end
 
   create_table "leagues", force: :cascade do |t|
@@ -198,6 +200,7 @@ ActiveRecord::Schema.define(version: 2022_05_31_112936) do
   add_foreign_key "games_squads", "seasons_squads"
   add_foreign_key "games_squads_players", "games_squads"
   add_foreign_key "games_squads_players", "seasons_squads_players"
+  add_foreign_key "games_squads_players", "users"
   add_foreign_key "leagues", "tournaments"
   add_foreign_key "seasons", "leagues"
   add_foreign_key "seasons_squads", "seasons"

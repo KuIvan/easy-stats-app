@@ -244,6 +244,10 @@
 # puts 'Successfully create games squads players'
 
 
+ #########################################################################
+ ######## Creating federation and system of leagues with 2 seasons #######
+ #########################################################################
+
 federation = Federation.create!(name: 'Federation 5x5')
 tournament_champ = federation.tournaments.create!(name: 'Championship')
 league_1   = tournament_champ.leagues.create!(name: 'League 1')
@@ -251,22 +255,43 @@ season_second_league_1 = league_1.seasons.create!
 
 react = Team.create!(name: "React")
 react_season_second_league_1 = react.seasons_squads.create!(season: season_second_league_1)
+react.team_photo.attach(io: File.open('1.jpeg'), filename: '1.jpeg')
 
 legion = Team.create!(name: "Legion")
 legion_season_second_league_1 = legion.seasons_squads.create!(season: season_second_league_1)
+legion.team_photo.attach(io: File.open('1.jpeg'), filename: '1.jpeg')
 
 youngs = Team.create!(name: 'Youngs')
 youngs_season_second_league_1 = youngs.seasons_squads.create!(season: season_second_league_1)
+youngs.team_photo.attach(io: File.open('1.jpeg'), filename: '2.png')
 
 navi = Team.create!(name: 'navi')
 navi_season_second_league_1 = navi.seasons_squads.create!(season: season_second_league_1)
+legion.team_photo.attach(io: File.open('3.jpeg'), filename: '3.jpeg')
+
+lazo = Team.create!(name: "Lazo")
+lazo_season_second_league_1 = lazo.seasons_squads.create!(season: season_second_league_1)
+lazo.team_photo.attach(io: File.open('5.jpeg'), filename: '5.jpeg')
+
+zenit = Team.create!(name: "Zenit")
+zenit_season_second_league_1 = zenit.seasons_squads.create!(season: season_second_league_1)
+zenit.team_photo.attach(io: File.open('6.jpeg'), filename: '6.jpeg')
+
+lokomotiv = Team.create!(name: "Lokomotiv")
+loko_season_second_league_1 = lokomotiv.seasons_squads.create!(season: season_second_league_1)
+lokomotiv.team_photo.attach(io: File.open('7.png'), filename: '7.png')
+
+odissey = Team.create!(name: "Oddisey")
+odissey_season_second_league_1 = odissey.seasons_squads.create!(season: season_second_league_1)
+odissey.team_photo.attach(io: File.open('4.jpeg'), filename: '4.jpeg')
+
+admin_user = User.create!(email: 'admin-admin@gmail.com', name:'admin', first_name:'admin', last_name: 'admin', password: 'admin')
 
 react_user_1 = User.create!(email: 'grigory-zotenko@gmail.com', name: 'grigory-zotenko', first_name: 'grigory', last_name: 'zotenko', password: '12345678')
 react_user_2 = User.create!(email: 'ivan-kuzhelev@gmail.com', name: 'ivan-kuzhelev', first_name: 'ivan', last_name: 'kuzhelev', password: '12345678')
 react_user_3 = User.create!(email: 'alik-mikhaylov@gmail.com', name: 'alik-mikhaylov', first_name: 'Alik', last_name: 'Mikhaylov', password: '12345678')
 react_user_4 = User.create!(email: 'alexandr-tarasov@gmail.com', name: 'alexandr-tarasov', first_name: 'alexandr', last_name: 'tarasov', password: '12345678')
 react_user_5 = User.create!(email: 'vladimir-shabanov@gmail.com', name: 'vladimir-shabanov', first_name: 'vladimir', last_name: 'shabanov', password: '12345678')
-
 
 legion_user_1 = User.create!(email: 'boris-lyaschenko@gmail.com', name: 'boris-lyaschenko', first_name: 'boris', last_name: 'lyaschenko', password: '12345678')
 legion_user_2 = User.create!(email: 'nikita-shuba@gmail.com', name: 'nikita-shuba', first_name: 'nikita', last_name: 'shuba', password: '12345678')
@@ -285,6 +310,30 @@ navi_user_2 = User.create!(email: Faker::Internet.email, name: "XBOCT", first_na
 navi_user_3 = User.create!(email: Faker::Internet.email, name: "Puppey", first_name: "Klement", last_name: "Ivanov", password: '12345678')
 navi_user_4 = User.create!(email: Faker::Internet.email, name: "ArtStyle", first_name: "Ivan", last_name: "Antonov", password: '12345678')
 navi_user_5 = User.create!(email: Faker::Internet.email, name: "Kuroky", first_name: "Kuro", last_name: "Salexi Tahakomi", password: '12345678')
+
+lazo_user_1 = User.create!(email: Faker::Internet.email, name: Faker::Name.name, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '12345678')
+lazo_user_2 = User.create!(email: Faker::Internet.email, name: Faker::Name.name, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '12345678')
+lazo_user_3 = User.create!(email: Faker::Internet.email, name: Faker::Name.name, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '12345678')
+lazo_user_4 = User.create!(email: Faker::Internet.email, name: Faker::Name.name, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '12345678')
+lazo_user_5 = User.create!(email: Faker::Internet.email, name: Faker::Name.name, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '12345678')
+
+zenit_user_1 = User.create!(email: Faker::Internet.email, name: Faker::Name.name, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '12345678')
+zenit_user_2 = User.create!(email: Faker::Internet.email, name: Faker::Name.name, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '12345678')
+zenit_user_3 = User.create!(email: Faker::Internet.email, name: Faker::Name.name, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '12345678')
+zenit_user_4 = User.create!(email: Faker::Internet.email, name: Faker::Name.name, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '12345678')
+zenit_user_5 = User.create!(email: Faker::Internet.email, name: Faker::Name.name, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '12345678')
+
+loko_user_1 = User.create!(email: Faker::Internet.email, name: Faker::Name.name, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '12345678')
+loko_user_2 = User.create!(email: Faker::Internet.email, name: Faker::Name.name, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '12345678')
+loko_user_3 = User.create!(email: Faker::Internet.email, name: Faker::Name.name, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '12345678')
+loko_user_4 = User.create!(email: Faker::Internet.email, name: Faker::Name.name, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '12345678')
+loko_user_5 = User.create!(email: Faker::Internet.email, name: Faker::Name.name, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '12345678')
+
+odissey_user_1 = User.create!(email: Faker::Internet.email, name: Faker::Name.name, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '12345678')
+odissey_user_2 = User.create!(email: Faker::Internet.email, name: Faker::Name.name, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '12345678')
+odissey_user_3 = User.create!(email: Faker::Internet.email, name: Faker::Name.name, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '12345678')
+odissey_user_4 = User.create!(email: Faker::Internet.email, name: Faker::Name.name, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '12345678')
+odissey_user_5 = User.create!(email: Faker::Internet.email, name: Faker::Name.name, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '12345678')
 
 team_player_react_user_1 = react.teams_players.create!(user: react_user_1, number: '10')
 tp_react_user_2 = react.teams_players.create!(user: react_user_2, number: '7')
@@ -310,6 +359,30 @@ team_player_navi_user_3 = navi.teams_players.create!(user: navi_user_3, number: 
 team_player_navi_user_4 = navi.teams_players.create!(user: navi_user_4, number: '29')
 team_player_navi_user_5 = navi.teams_players.create!(user: navi_user_5, number: '91')
 
+tp_lazo_user_1 = lazo.teams_players.create!(user: lazo_user_1, number: '11')
+tp_lazo_user_2 = lazo.teams_players.create!(user: lazo_user_2, number: '22')
+tp_lazo_user_3 = lazo.teams_players.create!(user: lazo_user_3, number: '33')
+tp_lazo_user_4 = lazo.teams_players.create!(user: lazo_user_4, number: '14')
+tp_lazo_user_5 = lazo.teams_players.create!(user: lazo_user_5, number: '55')
+
+tp_zenit_user_1 = zenit.teams_players.create!(user: zenit_user_1, number: '23')
+tp_zenit_user_2 = zenit.teams_players.create!(user: zenit_user_2, number: '75')
+tp_zenit_user_3 = zenit.teams_players.create!(user: zenit_user_3, number: '12')
+tp_zenit_user_4 = zenit.teams_players.create!(user: zenit_user_4, number: '14')
+tp_zenit_user_5 = zenit.teams_players.create!(user: zenit_user_5, number: '46')
+
+tp_odissey_user_1 = odissey.teams_players.create!(user: odissey_user_1, number: '32')
+tp_odissey_user_2 = odissey.teams_players.create!(user: odissey_user_2, number: '12')
+tp_odissey_user_3 = odissey.teams_players.create!(user: odissey_user_3, number: '35')
+tp_odissey_user_4 = odissey.teams_players.create!(user: odissey_user_4, number: '56')
+tp_odissey_user_5 = odissey.teams_players.create!(user: odissey_user_5, number: '76')
+
+tp_loko_user_1 = lokomotiv.teams_players.create!(user: loko_user_1, number: '1')
+tp_loko_user_2 = lokomotiv.teams_players.create!(user: loko_user_2, number: '2')
+tp_loko_user_3 = lokomotiv.teams_players.create!(user: loko_user_3, number: '6')
+tp_loko_user_4 = lokomotiv.teams_players.create!(user: loko_user_4, number: '3')
+tp_loko_user_5 = lokomotiv.teams_players.create!(user: loko_user_5, number: '5')
+
 ssp_1 = react_season_second_league_1.seasons_squads_players.create!(teams_player: team_player_react_user_1)
 ssp_2 = react_season_second_league_1.seasons_squads_players.create!(teams_player: tp_react_user_2)
 ssp_3 = react_season_second_league_1.seasons_squads_players.create!(teams_player: tp_react_user_3)
@@ -334,9 +407,41 @@ ssp_3333 = navi_season_second_league_1.seasons_squads_players.create!(teams_play
 ssp_4444 = navi_season_second_league_1.seasons_squads_players.create!(teams_player: team_player_navi_user_4)
 ssp_5555 = navi_season_second_league_1.seasons_squads_players.create!(teams_player: team_player_navi_user_5)
 
+ssp_11111 = loko_season_second_league_1.seasons_squads_players.create!(teams_player: tp_loko_user_1)
+ssp_22222 = loko_season_second_league_1.seasons_squads_players.create!(teams_player: tp_loko_user_2)
+ssp_33333 = loko_season_second_league_1.seasons_squads_players.create!(teams_player: tp_loko_user_3)
+ssp_44444 = loko_season_second_league_1.seasons_squads_players.create!(teams_player: tp_loko_user_4)
+ssp_55555 = loko_season_second_league_1.seasons_squads_players.create!(teams_player: tp_loko_user_5)
+
+ssp_111111 = lazo_season_second_league_1.seasons_squads_players.create!(teams_player: tp_lazo_user_1)
+ssp_222222 = lazo_season_second_league_1.seasons_squads_players.create!(teams_player: tp_lazo_user_2)
+ssp_333333 = lazo_season_second_league_1.seasons_squads_players.create!(teams_player: tp_lazo_user_3)
+ssp_444444 = lazo_season_second_league_1.seasons_squads_players.create!(teams_player: tp_lazo_user_4)
+ssp_555555 = lazo_season_second_league_1.seasons_squads_players.create!(teams_player: tp_lazo_user_5)
+
+ssp_1111111 = zenit_season_second_league_1.seasons_squads_players.create!(teams_player: tp_zenit_user_1)
+ssp_2222222 = zenit_season_second_league_1.seasons_squads_players.create!(teams_player: tp_zenit_user_2)
+ssp_3333333 = zenit_season_second_league_1.seasons_squads_players.create!(teams_player: tp_zenit_user_3)
+ssp_4444444 = zenit_season_second_league_1.seasons_squads_players.create!(teams_player: tp_zenit_user_4)
+ssp_5555555 = zenit_season_second_league_1.seasons_squads_players.create!(teams_player: tp_zenit_user_5)
+
+ssp_1_1 = odissey_season_second_league_1.seasons_squads_players.create!(teams_player: tp_odissey_user_1)
+ssp_2_2 = odissey_season_second_league_1.seasons_squads_players.create!(teams_player: tp_odissey_user_2)
+ssp_3_3 = odissey_season_second_league_1.seasons_squads_players.create!(teams_player: tp_odissey_user_3)
+ssp_4_4 = odissey_season_second_league_1.seasons_squads_players.create!(teams_player: tp_odissey_user_4)
+ssp_5_5 = odissey_season_second_league_1.seasons_squads_players.create!(teams_player: tp_odissey_user_5)
+
 stage_1 = season_second_league_1.stages.create!(name: '1 tour')
+stage_2 = season_second_league_1.stages.create!(name: '2 tour')
+
 game_1 = stage_1.games.create!(status: 'finished', game_day: DateTime.now - 50.days)
 game_2 = stage_1.games.create!(status: 'finished', game_day: DateTime.now - 50.days)
+game_3 = stage_1.games.create!(status: 'finished', game_day: DateTime.now - 50.days)
+game_4 = stage_1.games.create!(status: 'finished', game_day: DateTime.now - 50.days)
+game_5 = stage_2.games.create!(status: 'finished', game_day: DateTime.now - 40.days)
+game_6 = stage_2.games.create!(status: 'finished', game_day: DateTime.now - 40.days)
+
+
 
 react_game_1 = react_season_second_league_1.games_squads.create!(goals: 9, game: game_1)
 legion_game_1 = legion_season_second_league_1.games_squads.create!(goals: 4, game: game_1, status: 'guest')
@@ -344,28 +449,87 @@ legion_game_1 = legion_season_second_league_1.games_squads.create!(goals: 4, gam
 youngs_game_1 = youngs_season_second_league_1.games_squads.create!(goals: 0, game: game_2)
 navi_game_1 = navi_season_second_league_1.games_squads.create!(goals: 20, game: game_2, status: 'guest')
 
-gsp = react_game_1.games_squads_player.create!(seasons_squads_player: ssp_1)
-gsp = react_game_1.games_squads_player.create!(seasons_squads_player: ssp_2)
-gsp = react_game_1.games_squads_player.create!(seasons_squads_player: ssp_3)
-gsp = react_game_1.games_squads_player.create!(seasons_squads_player: ssp_4)
-gsp = react_game_1.games_squads_player.create!(seasons_squads_player: ssp_5)
+loko_game_1 = loko_season_second_league_1.games_squads.create!(goals: 9, game: game_3)
+odissey_game_1 = odissey_season_second_league_1.games_squads.create!(goals: 13, game: game_3, status: 'guest')
 
-gsp0 = legion_game_1.games_squads_player.create!(seasons_squads_player: ssp_11)
-gsp0 = legion_game_1.games_squads_player.create!(seasons_squads_player: ssp_22)
-gsp0 = legion_game_1.games_squads_player.create!(seasons_squads_player: ssp_33)
-gsp0 = legion_game_1.games_squads_player.create!(seasons_squads_player: ssp_44)
-gsp0 = legion_game_1.games_squads_player.create!(seasons_squads_player: ssp_55)
+zenit_game_1 = zenit_season_second_league_1.games_squads.create!(goals: 10, game: game_4)
+lazo_game_1 = lazo_season_second_league_1.games_squads.create!(goals: 3, game: game_4, status: 'guest')
+
+react_game_2 = react_season_second_league_1.games_squads.create!(goals: 3, game: game_5)
+loko_game_2 = loko_season_second_league_1.games_squads.create!(goals: 9, game: game_5, status: 'guest')
+
+odissey_game_2 = odissey_season_second_league_1.games_squads.create!(goals: 8, game: game_6)
+legion_game_2 = legion_season_second_league_1.games_squads.create!(goals: 2, game: game_6, status: 'guest')
 
 
-gsp1 = youngs_game_1.games_squads_player.create!(seasons_squads_player: ssp_111)
-gsp1 = youngs_game_1.games_squads_player.create!(seasons_squads_player: ssp_222)
-gsp1 = youngs_game_1.games_squads_player.create!(seasons_squads_player: ssp_333)
-gsp1 = youngs_game_1.games_squads_player.create!(seasons_squads_player: ssp_444)
-gsp1 = youngs_game_1.games_squads_player.create!(seasons_squads_player: ssp_555)
+gsp = react_game_1.games_squads_player.create!(seasons_squads_player: ssp_1, user: react_user_1)
+gsp = react_game_1.games_squads_player.create!(seasons_squads_player: ssp_2, user: react_user_2)
+gsp = react_game_1.games_squads_player.create!(seasons_squads_player: ssp_3, user: react_user_3)
+gsp = react_game_1.games_squads_player.create!(seasons_squads_player: ssp_4, user: react_user_4)
+gsp = react_game_1.games_squads_player.create!(seasons_squads_player: ssp_5, user: react_user_5)
 
-gsp2 = navi_game_1.games_squads_player.create!(seasons_squads_player: ssp_1111)
-gsp2 = navi_game_1.games_squads_player.create!(seasons_squads_player: ssp_2222)
-gsp2 = navi_game_1.games_squads_player.create!(seasons_squads_player: ssp_3333)
-gsp2 = navi_game_1.games_squads_player.create!(seasons_squads_player: ssp_4444)
-gsp2 = navi_game_1.games_squads_player.create!(seasons_squads_player: ssp_5555)
+gsp0 = legion_game_1.games_squads_player.create!(seasons_squads_player: ssp_11, user: legion_user_1)
+gsp0 = legion_game_1.games_squads_player.create!(seasons_squads_player: ssp_22, user: legion_user_2)
+gsp0 = legion_game_1.games_squads_player.create!(seasons_squads_player: ssp_33, user: legion_user_3)
+gsp0 = legion_game_1.games_squads_player.create!(seasons_squads_player: ssp_44, user: legion_user_4)
+gsp0 = legion_game_1.games_squads_player.create!(seasons_squads_player: ssp_55, user: legion_user_5)
+
+gsp1 = youngs_game_1.games_squads_player.create!(seasons_squads_player: ssp_111, user: youngs_user_1)
+gsp1 = youngs_game_1.games_squads_player.create!(seasons_squads_player: ssp_222, user: youngs_user_2)
+gsp1 = youngs_game_1.games_squads_player.create!(seasons_squads_player: ssp_333, user: youngs_user_3)
+gsp1 = youngs_game_1.games_squads_player.create!(seasons_squads_player: ssp_444, user: youngs_user_4)
+gsp1 = youngs_game_1.games_squads_player.create!(seasons_squads_player: ssp_555, user: youngs_user_5)
+
+gsp2 = navi_game_1.games_squads_player.create!(seasons_squads_player: ssp_1111, user: navi_user_1)
+gsp2 = navi_game_1.games_squads_player.create!(seasons_squads_player: ssp_2222, user: navi_user_2)
+gsp2 = navi_game_1.games_squads_player.create!(seasons_squads_player: ssp_3333, user: navi_user_3)
+gsp2 = navi_game_1.games_squads_player.create!(seasons_squads_player: ssp_4444, user: navi_user_4)
+gsp2 = navi_game_1.games_squads_player.create!(seasons_squads_player: ssp_5555, user: navi_user_5)
+
+gsp_react_1 = react_game_2.games_squads_player.create!(seasons_squads_player: ssp_2, user: react_user_2)
+gsp_react_1 = react_game_2.games_squads_player.create!(seasons_squads_player: ssp_3, user: react_user_3)
+gsp_react_1 = react_game_2.games_squads_player.create!(seasons_squads_player: ssp_4, user: react_user_4)
+gsp_react_1 = react_game_2.games_squads_player.create!(seasons_squads_player: ssp_5, user: react_user_5)
+
+gsp_loko_1 = loko_game_1.games_squads_player.create!(seasons_squads_player: ssp_11111, user: loko_user_1)
+gsp_loko_1 = loko_game_1.games_squads_player.create!(seasons_squads_player: ssp_22222, user: loko_user_2)
+gsp_loko_1 = loko_game_1.games_squads_player.create!(seasons_squads_player: ssp_33333, user: loko_user_3)
+gsp_loko_1 = loko_game_1.games_squads_player.create!(seasons_squads_player: ssp_44444, user: loko_user_4)
+gsp_loko_1 = loko_game_1.games_squads_player.create!(seasons_squads_player: ssp_55555, user: loko_user_5)
+
+gsp_lazo_1 = lazo_game_1.games_squads_player.create!(seasons_squads_player: ssp_111111, user: lazo_user_1)
+gsp_lazo_1 = lazo_game_1.games_squads_player.create!(seasons_squads_player: ssp_222222, user: lazo_user_2)
+gsp_lazo_1 = lazo_game_1.games_squads_player.create!(seasons_squads_player: ssp_333333, user: lazo_user_3)
+gsp_lazo_1 = lazo_game_1.games_squads_player.create!(seasons_squads_player: ssp_444444, user: lazo_user_4)
+gsp_lazo_1 = lazo_game_1.games_squads_player.create!(seasons_squads_player: ssp_555555, user: lazo_user_5)
+
+gsp_zenit_1 = zenit_game_1.games_squads_player.create!(seasons_squads_player: ssp_1111111, user: zenit_user_1)
+gsp_zenit_1 = zenit_game_1.games_squads_player.create!(seasons_squads_player: ssp_2222222, user: zenit_user_2)
+gsp_zenit_1 = zenit_game_1.games_squads_player.create!(seasons_squads_player: ssp_3333333, user: zenit_user_3)
+gsp_zenit_1 = zenit_game_1.games_squads_player.create!(seasons_squads_player: ssp_4444444, user: zenit_user_4)
+gsp_zenit_1 = zenit_game_1.games_squads_player.create!(seasons_squads_player: ssp_5555555, user: zenit_user_5)
+
+gsp_loko_2 = loko_game_2.games_squads_player.create!(seasons_squads_player: ssp_11111, user: loko_user_1)
+gsp_loko_2 = loko_game_2.games_squads_player.create!(seasons_squads_player: ssp_22222, user: loko_user_2)
+gsp_loko_2 = loko_game_2.games_squads_player.create!(seasons_squads_player: ssp_33333, user: loko_user_3)
+gsp_loko_2 = loko_game_2.games_squads_player.create!(seasons_squads_player: ssp_44444, user: loko_user_4)
+gsp_loko_2 = loko_game_2.games_squads_player.create!(seasons_squads_player: ssp_55555, user: loko_user_5)
+
+gsp_odissey_1 = odissey_game_1.games_squads_player.create!(seasons_squads_player: ssp_1_1, user: odissey_user_1)
+gsp_odissey_1 = odissey_game_1.games_squads_player.create!(seasons_squads_player: ssp_2_2, user: odissey_user_2)
+gsp_odissey_1 = odissey_game_1.games_squads_player.create!(seasons_squads_player: ssp_3_3, user: odissey_user_3)
+gsp_odissey_1 = odissey_game_1.games_squads_player.create!(seasons_squads_player: ssp_4_4, user: odissey_user_4)
+gsp_odissey_1 = odissey_game_1.games_squads_player.create!(seasons_squads_player: ssp_5_5, user: odissey_user_5)
+
+gsp_odissey_2 = odissey_game_2.games_squads_player.create!(seasons_squads_player: ssp_1_1, user: odissey_user_1)
+gsp_odissey_2 = odissey_game_2.games_squads_player.create!(seasons_squads_player: ssp_2_2, user: odissey_user_2)
+gsp_odissey_2 = odissey_game_2.games_squads_player.create!(seasons_squads_player: ssp_3_3, user: odissey_user_3)
+gsp_odissey_2 = odissey_game_2.games_squads_player.create!(seasons_squads_player: ssp_4_4, user: odissey_user_4)
+gsp_odissey_2 = odissey_game_2.games_squads_player.create!(seasons_squads_player: ssp_5_5, user: odissey_user_5)
+
+gsp01 = legion_game_2.games_squads_player.create!(seasons_squads_player: ssp_11, user: legion_user_1)
+gsp01 = legion_game_2.games_squads_player.create!(seasons_squads_player: ssp_22, user: legion_user_2)
+gsp01 = legion_game_2.games_squads_player.create!(seasons_squads_player: ssp_33, user: legion_user_3)
+gsp01 = legion_game_2.games_squads_player.create!(seasons_squads_player: ssp_44, user: legion_user_4)
+gsp01 = legion_game_2.games_squads_player.create!(seasons_squads_player: ssp_55, user: legion_user_5)
 
