@@ -285,7 +285,7 @@ odissey = Team.create!(name: "Oddisey")
 odissey_season_second_league_1 = odissey.seasons_squads.create!(season: season_second_league_1)
 odissey.team_photo.attach(io: File.open('4.jpeg'), filename: '4.jpeg')
 
-admin_user = User.create!(email: 'admin-admin@gmail.com', name:'admin', first_name:'admin', last_name: 'admin', password: 'admin')
+admin_user = User.create!(email: 'admin-admin@gmail.com', name:'admin', first_name:'admin', last_name: 'admin', password: 'admin-admin')
 
 react_user_1 = User.create!(email: 'grigory-zotenko@gmail.com', name: 'grigory-zotenko', first_name: 'grigory', last_name: 'zotenko', password: '12345678')
 react_user_2 = User.create!(email: 'ivan-kuzhelev@gmail.com', name: 'ivan-kuzhelev', first_name: 'ivan', last_name: 'kuzhelev', password: '12345678')
