@@ -6,6 +6,7 @@ module Types
     # Users
     field :fetch_users, resolver: Resolvers::Users::FetchUsers
     field :get_user, resolver: Resolvers::Users::GetUser
+    field :get_current_user, resolver: Resolvers::Users::GetCurrentUser
 
     # Federations
     field :fetch_federations, resolver: Resolvers::Federations::FetchFederations
@@ -17,6 +18,7 @@ module Types
     # Games
     field :fetch_games, resolver: Resolvers::Games::FetchGames
     field :get_game, resolver: Resolvers::Games::GetGame
+    field :fetch_all_games, resolver: Resolvers::Games::FetchAllGames
 
   end
 end

@@ -8,25 +8,12 @@ module Resolvers
 
       def resolve(game_id:)
 
-        puts 'game_id'
-        puts game_id.inspect
-        puts 'game_id'
+        user_player = GamesSquadsPlayer.find(current_user.id)
 
-        # games_squads_players = GamesSquadsPlayer.joins(seasons_squads_player: { teams_player: :user }).where(seasons_squads_players: { teams_players: { user: current_user }})
-        #
-        # puts 'games_squads_players'
-        # puts games_squads_players.inspect
-        # puts 'games_squads_players'
+        # Action.where(game: Game.find(game_id)).where('initiator_id = :game_squad_player OR addressable_id = :game_squad_player', game_squad_player: user_player.id)
 
-        Game.find(game_id).actions.where(initiator: GamesSquadsPlayer.joins(seasons_squads_player: { teams_player: :user }).where(seasons_squads_players: { teams_players: { user: current_user }}))
+        Action.where('game_id = :game_id AND (initiator_id = :game_squad_player OR addressable_id = :game_squad_player)', game_squad_player: user_player.id, game_id: game_id)
 
-        # Game.find(game_id).actions.where('initiator = :game_squad_player OR addressable = :game_squad_player', game_squad_player: games_squads_players)
-
-        # if current_user.present?
-        #   Game.find(game_id).actions.where('initiator = :game_squad_player OR addressable = :game_squad_player', game_squad_player:
-        #     GamesSquadsPlayer.joins(seasons_squads_player: { teams_player: :user }).where(seasons_squads_players: { teams_players: { user: current_user }}  ))
-        # else
-        # end
       end
 
     end

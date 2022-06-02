@@ -14,6 +14,7 @@ class User < ApplicationRecord
             on: :create
 
   has_many :teams_players, dependent: :destroy
+  has_one :games_squads_player, dependent: :destroy
 end
 
 # == Schema Information
