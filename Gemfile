@@ -28,6 +28,8 @@ begin
   gem 'graphql'                            # https://github.com/rmosolgo/graphql-ruby
   gem 'graphiql-rails'                     # https://github.com/rmosolgo/graphiql-rails
   gem "image_processing", ">= 1.2"         # https://github.com/janko/image_processing
+  # NOTE: We use faker in db:seed on heroku
+  gem 'faker'                              # https://github.com/faker-ruby/faker.git
 end
 
 group :development, :test do
@@ -43,5 +45,4 @@ group :development do
   gem 'rack-mini-profiler'                    # https://github.com/MiniProfiler/rack-mini-profiler
   gem 'listen', '~> 3.3'                      # https://github.com/guard/listen
   gem 'spring'                                # https://github.com/rails/spring
-  gem 'faker'                                 # https://github.com/faker-ruby/faker.git
 end
