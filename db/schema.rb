@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2022_06_02_114235) do
     t.boolean "is_successful", default: true, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "game_id"
+    t.bigint "game_id", null: false
     t.index ["addressable_id"], name: "index_actions_on_addressable_id"
     t.index ["game_id"], name: "index_actions_on_game_id"
     t.index ["initiator_id"], name: "index_actions_on_initiator_id"

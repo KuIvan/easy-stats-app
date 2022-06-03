@@ -245,13 +245,17 @@
 
 
  #########################################################################
- ######## Creating federation and system of leagues with 2 seasons #######
+ ######## Creating federation and system of leagues ######################
  #########################################################################
 
 federation = Federation.create!(name: 'Federation 5x5')
 tournament_champ = federation.tournaments.create!(name: 'Championship')
 league_1   = tournament_champ.leagues.create!(name: 'League 1')
 season_second_league_1 = league_1.seasons.create!
+
+##########################################################################
+############################## Creating Teams ############################
+##########################################################################
 
 react = Team.create!(name: "React")
 react_season_second_league_1 = react.seasons_squads.create!(season: season_second_league_1)
@@ -263,7 +267,7 @@ legion.team_photo.attach(io: File.open('1.jpeg'), filename: '1.jpeg')
 
 youngs = Team.create!(name: 'Youngs')
 youngs_season_second_league_1 = youngs.seasons_squads.create!(season: season_second_league_1)
-youngs.team_photo.attach(io: File.open('1.jpeg'), filename: '2.png')
+youngs.team_photo.attach(io: File.open('2.png'), filename: '2.png')
 
 navi = Team.create!(name: 'navi')
 navi_season_second_league_1 = navi.seasons_squads.create!(season: season_second_league_1)
@@ -284,6 +288,10 @@ lokomotiv.team_photo.attach(io: File.open('7.png'), filename: '7.png')
 odissey = Team.create!(name: "Oddisey")
 odissey_season_second_league_1 = odissey.seasons_squads.create!(season: season_second_league_1)
 odissey.team_photo.attach(io: File.open('4.jpeg'), filename: '4.jpeg')
+
+##########################################################################
+########################## Creating Users ################################
+##########################################################################
 
 admin_user = User.create!(email: 'admin-admin@gmail.com', name:'admin', first_name:'admin', last_name: 'admin', password: 'admin-admin')
 
@@ -335,6 +343,10 @@ odissey_user_3 = User.create!(email: Faker::Internet.email, name: Faker::Name.na
 odissey_user_4 = User.create!(email: Faker::Internet.email, name: Faker::Name.name, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '12345678')
 odissey_user_5 = User.create!(email: Faker::Internet.email, name: Faker::Name.name, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '12345678')
 
+##########################################################################
+########################## Creating Teams Player #########################
+##########################################################################
+
 team_player_react_user_1 = react.teams_players.create!(user: react_user_1, number: '10')
 tp_react_user_2 = react.teams_players.create!(user: react_user_2, number: '7')
 tp_react_user_3 = react.teams_players.create!(user: react_user_3, number: '17')
@@ -382,6 +394,10 @@ tp_loko_user_2 = lokomotiv.teams_players.create!(user: loko_user_2, number: '2')
 tp_loko_user_3 = lokomotiv.teams_players.create!(user: loko_user_3, number: '6')
 tp_loko_user_4 = lokomotiv.teams_players.create!(user: loko_user_4, number: '3')
 tp_loko_user_5 = lokomotiv.teams_players.create!(user: loko_user_5, number: '5')
+
+##########################################################################
+###################### Creating Season Squads Players ####################
+##########################################################################
 
 ssp_1 = react_season_second_league_1.seasons_squads_players.create!(teams_player: team_player_react_user_1)
 ssp_2 = react_season_second_league_1.seasons_squads_players.create!(teams_player: tp_react_user_2)
@@ -431,6 +447,10 @@ ssp_3_3 = odissey_season_second_league_1.seasons_squads_players.create!(teams_pl
 ssp_4_4 = odissey_season_second_league_1.seasons_squads_players.create!(teams_player: tp_odissey_user_4)
 ssp_5_5 = odissey_season_second_league_1.seasons_squads_players.create!(teams_player: tp_odissey_user_5)
 
+##########################################################################
+############################ Creating Games ##############################
+##########################################################################
+#
 stage_1 = season_second_league_1.stages.create!(name: '1 tour')
 stage_2 = season_second_league_1.stages.create!(name: '2 tour')
 
@@ -440,8 +460,6 @@ game_3 = stage_1.games.create!(status: 'finished', game_day: DateTime.now - 50.d
 game_4 = stage_1.games.create!(status: 'finished', game_day: DateTime.now - 50.days)
 game_5 = stage_2.games.create!(status: 'finished', game_day: DateTime.now - 40.days)
 game_6 = stage_2.games.create!(status: 'finished', game_day: DateTime.now - 40.days)
-
-
 
 react_game_1 = react_season_second_league_1.games_squads.create!(goals: 9, game: game_1)
 legion_game_1 = legion_season_second_league_1.games_squads.create!(goals: 4, game: game_1, status: 'guest')
@@ -461,6 +479,9 @@ loko_game_2 = loko_season_second_league_1.games_squads.create!(goals: 9, game: g
 odissey_game_2 = odissey_season_second_league_1.games_squads.create!(goals: 8, game: game_6)
 legion_game_2 = legion_season_second_league_1.games_squads.create!(goals: 2, game: game_6, status: 'guest')
 
+#########################################################################
+##################### Creating Games Squads Players #####################
+#########################################################################
 
 gsp = react_game_1.games_squads_player.create!(seasons_squads_player: ssp_1, user: react_user_1)
 gsp = react_game_1.games_squads_player.create!(seasons_squads_player: ssp_2, user: react_user_2)

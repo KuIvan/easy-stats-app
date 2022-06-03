@@ -6,6 +6,7 @@ module Types
 
       field :id, ID, null: false
       field :games_squad, Types::Common::GamesSquadType
+      field :user, Types::Common::UserType
       field :seasons_squads_player, Types::Common::SeasonSquadPlayerType
       field :play_time, Int, null: false
 

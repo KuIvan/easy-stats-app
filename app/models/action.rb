@@ -36,7 +36,7 @@ end
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #  addressable_id :bigint
-#  game_id        :bigint
+#  game_id        :bigint           not null
 #  initiator_id   :bigint
 #
 # Indexes
