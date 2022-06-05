@@ -9,7 +9,7 @@ class GraphqlController < ApplicationController
     context = {
       # Query context goes here, for example:
       # total_count: 0,
-      current_user: current_user,
+      current_user: method(:current_user),
     }
     result = EasyStatsAppSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
     render json: result

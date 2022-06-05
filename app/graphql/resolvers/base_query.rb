@@ -4,7 +4,7 @@ module Resolvers
   class BaseQuery < GraphQL::Schema::Resolver
 
     def current_user
-      context[:current_user]
+      context[:current_user].call
     end
     #
     # def authorize(record, rule)
