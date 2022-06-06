@@ -8,7 +8,7 @@ module Resolvers
 
       def resolve(game_id:)
 
-        user_player = GamesSquadsPlayer.find(current_user.id)
+        user_player = GamesSquadsPlayer.find_by(user: current_user)
 
         # Action.where(game: Game.find(game_id)).where('initiator_id = :game_squad_player OR addressable_id = :game_squad_player', game_squad_player: user_player.id)
 
