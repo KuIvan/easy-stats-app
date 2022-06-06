@@ -259,19 +259,19 @@ season_second_league_1 = league_1.seasons.create!
 
 react = Team.create!(name: "React")
 react_season_second_league_1 = react.seasons_squads.create!(season: season_second_league_1)
-react.team_photo.attach(io: File.open('1.jpeg'), filename: '1.jpeg')
+react.team_photo.attach(io: File.open('2.png'), filename: '2.png')
 
 legion = Team.create!(name: "Legion")
 legion_season_second_league_1 = legion.seasons_squads.create!(season: season_second_league_1)
-legion.team_photo.attach(io: File.open('1.jpeg'), filename: '1.jpeg')
+legion.team_photo.attach(io: File.open('1_eca212b9.jpeg'), filename: '1_eca212b9.jpeg')
 
 youngs = Team.create!(name: 'Youngs')
 youngs_season_second_league_1 = youngs.seasons_squads.create!(season: season_second_league_1)
-youngs.team_photo.attach(io: File.open('2.png'), filename: '2.png')
+youngs.team_photo.attach(io: File.open('images.jpeg'), filename: 'images.jpeg')
 
-navi = Team.create!(name: 'navi')
+navi = Team.create!(name: 'Natus Vincere')
 navi_season_second_league_1 = navi.seasons_squads.create!(season: season_second_league_1)
-legion.team_photo.attach(io: File.open('3.jpeg'), filename: '3.jpeg')
+navi.team_photo.attach(io: File.open('3.jpeg'), filename: '3.jpeg')
 
 lazo = Team.create!(name: "Lazo")
 lazo_season_second_league_1 = lazo.seasons_squads.create!(season: season_second_league_1)
