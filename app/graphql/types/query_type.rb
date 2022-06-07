@@ -13,7 +13,8 @@ module Types
 
     # Actions
     # field :fetch_action_scopes, resolver: Resolvers::Actions::FetchActionScopes
-     field :fetch_current_user_actions, resolver: Resolvers::Actions::FetchCurrentUserActions
+    field :fetch_current_user_actions, resolver: Resolvers::Actions::FetchCurrentUserActions
+    field :fetch_goal_actions, resolver: Resolvers::Actions::FetchGoalActions
 
     # Games
     field :fetch_games, resolver: Resolvers::Games::FetchGames
