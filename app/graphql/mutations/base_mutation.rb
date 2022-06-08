@@ -6,9 +6,9 @@ module Mutations
     object_class Types::BaseObject
   end
 
-  # def current_user
-  #   context[:current_user]
-  # end
+  def current_user
+    context[:current_user].call
+  end
   #
   # def authorize(record, rule)
   #   context[:authorize]&.call(record, rule)
